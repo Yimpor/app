@@ -2,7 +2,7 @@
     "name": "tree6bee/app",
     "description": "create a new ctx framework application project.",
     "type": "project",
-    "keywords": ["ctx", "application", "project", "tree6bee"],
+    "keywords": ["cf", "ctx", "application", "project", "tree6bee"],
     "license": "MIT",
 
     "require": {

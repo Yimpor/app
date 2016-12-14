@@ -6,5 +6,5 @@ create a new ctx framework application project.
 * installation
 
 ```
-composer create-project tree6bee/application --no-install
+composer create-project tree6bee/app --no-install
 ```

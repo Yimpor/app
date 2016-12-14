@@ -8,6 +8,6 @@ return array(
     'environment'       => 'development',
     'app_path'          => dirname(__DIR__),
     'storage_path'      => dirname(__DIR__) . '/storage',
-    'static'            => 'http://s.sh7nestatic.com', //静态资源
     'xhprof_dir'        =>  __DIR__ . '/../../public/xhprof',
+    'static'            => 'http://s.sh7nestatic.com', //静态资源
 );

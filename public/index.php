@@ -46,5 +46,4 @@
  */
 require __DIR__ . '/../ctx_base/vendor/autoload.php';
 
-$ctx = Ctx\Ctx::getInstance();
-$ctx->Cf->setAppPath(__DIR__ . '/../app')->run();
+App\App::getInstance()->run();

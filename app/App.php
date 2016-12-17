@@ -17,15 +17,10 @@ class App extends Application
         $config = Ctx::getInstance()->Cf->getConfiguration($appDir . '/config');
 
         //构造异常接管对象
-        $namespace = __NAMESPACE__;
-
-        //如果采用composer统一处理 这里可以去掉
-        new \Tree6bee\Ctx\Loader\Psr4(array(
-            $namespace . '\\' => $appDir,
-        ));
-        $exceptionHandlerClass = '\\' . $namespace . '\Exceptions\Handler';
+        $exceptionHandlerClass = '\\' . __NAMESPACE__ . '\Exceptions\Handler';
         $exceptionHandler = new $exceptionHandlerClass('', 'CtxFramework/1.1');
 
+        //初始化app的配置类和异常接管类
         $this->init($config, $exceptionHandler);
     }
 
@@ -37,7 +32,7 @@ class App extends Application
         //获取Kernel实例
         /* @var $kernel \Tree6bee\Cf\Foundation\Kernel */
         $kernelClass = '\\' . __NAMESPACE__ . '\Foundation\Kernel';
-        $kernel = new $kernelClass($this);
+        $kernel = new $kernelClass($this);  //第二个参数自定义路由类,类型为 RouteContract
 
         $request = Request::capture();
         //var_dump( $request->uri->get() );

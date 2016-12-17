@@ -46,4 +46,9 @@
  */
 require __DIR__ . '/../ctx_base/vendor/autoload.php';
 
+//如果采用composer统一处理 这里可以去掉
+new \Tree6bee\Ctx\Loader\Psr4(array(
+    'App\\' => __DIR__ . '/../app',
+));
+
 App\App::getInstance()->run();

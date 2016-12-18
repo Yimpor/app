@@ -2,19 +2,17 @@
 
 namespace App;
 
+use App\Foundation\Config;
 use Tree6bee\Cf\Foundation\Application;
-use Ctx\Ctx;
 use Tree6bee\Cf\Http\Request;
 
 class App extends Application
 {
     public function __construct()
     {
-        $appDir = __DIR__;
-
         //构造config对象
         /* @var $config \Tree6bee\Cf\Contracts\Config */
-        $config = Ctx::getInstance()->Cf->getConfiguration($appDir . '/config');
+        $config = new Config(__DIR__ . '/config');
 
         //构造异常接管对象
         $exceptionHandlerClass = '\\' . __NAMESPACE__ . '\Exceptions\Handler';
